@@ -1,4 +1,4 @@
-class ArticleController < ApplicationController
+class ArticlesController < ApplicationController
    before_action :set_article, only: [:show, :edit, :update, :destroy]
   def index
      @article = Article.all
@@ -15,7 +15,7 @@ class ArticleController < ApplicationController
        @article = Article.new(article_params)
     @article.save
 
-    redirect_to article_path
+    redirect_to articles_path
   end
 
   def edit
@@ -28,7 +28,7 @@ class ArticleController < ApplicationController
 
   def destroy
       @article.destroy
-        redirect_to article_index_path
+        redirect_to articles_path
   end
 
   private
